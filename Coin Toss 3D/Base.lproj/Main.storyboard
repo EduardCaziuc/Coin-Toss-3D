@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,70 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Coin_Toss_3D" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HYE-CE-jcv">
+                                <rect key="frame" x="71" y="463" width="178" height="67"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="67" id="bUg-bY-4UB"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="178" id="h8j-xe-1KC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
+                                <state key="normal" title="Drag Up" backgroundImage="Flip Coin Button Background">
+                                    <color key="titleColor" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="doFlipCoin:" destination="BYZ-38-t0r" eventType="touchDragExit" id="XqT-dv-ffY"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Heads" translatesAutoresizingMaskIntoConstraints="NO" id="EmU-yP-3hc">
+                                <rect key="frame" x="100" y="347" width="121" height="121"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="121" id="mut-13-SNg"/>
+                                    <constraint firstAttribute="height" constant="121" id="rRH-ER-Imx"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Bv-dU-nXK">
+                                <rect key="frame" x="16" y="20" width="49" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="1u1-fj-kMc"/>
+                                    <constraint firstAttribute="width" constant="49" id="GK7-PA-ieb"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="Heads-1"/>
+                                <connections>
+                                    <action selector="ChanceCoinButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kTm-To-doN"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="EmU-yP-3hc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="7cL-Sh-3JY"/>
+                            <constraint firstItem="HYE-CE-jcv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="71" id="EZG-a8-gTg"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="HYE-CE-jcv" secondAttribute="trailing" constant="71" id="Fp9-XS-6Kd"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="HYE-CE-jcv" secondAttribute="bottom" constant="38" id="Jtm-sf-XK4"/>
+                            <constraint firstItem="HYE-CE-jcv" firstAttribute="top" secondItem="EmU-yP-3hc" secondAttribute="bottom" constant="-5" id="LdP-UG-sdT"/>
+                            <constraint firstItem="8Bv-dU-nXK" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="P4p-Zf-NR6"/>
+                            <constraint firstItem="EmU-yP-3hc" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="iWw-9Q-loG"/>
+                            <constraint firstItem="8Bv-dU-nXK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="zQr-qR-uw6"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="ChangeCoinButton" destination="8Bv-dU-nXK" id="K95-dU-E0C"/>
+                        <outlet property="coinView" destination="EmU-yP-3hc" id="TzT-QP-Am4"/>
+                        <outlet property="flipButton" destination="HYE-CE-jcv" id="OgY-A6-VXB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="116.25" y="117.25352112676056"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Flip Coin Button Background" width="300" height="100"/>
+        <image name="Heads" width="399" height="400"/>
+        <image name="Heads-1" width="1600" height="1600"/>
+    </resources>
 </document>
