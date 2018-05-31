@@ -10,7 +10,7 @@ import UIKit
 import QuartzCore
 
 
-let reps =   2
+let reps = 2
 let animation: Double = 0.15
 
 class ViewController: UIViewController {
