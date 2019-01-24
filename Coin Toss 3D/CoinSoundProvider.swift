@@ -14,19 +14,20 @@ struct CoinSoundProvider {
     
     mutating func playCoinSound() {
         
-        guard let url = Bundle.main.url(forResource: "CoinFlip", withExtension: "wav") else { return }
-        
         do {
-            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
-            try AVAudioSession.sharedInstance().setActive(true)
             
-            coinFlipSound = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.mp3.rawValue)
+            if let url = Bundle.main.path(forResource: "CoinFlip", ofType: "wav") {
+                coinFlipSound = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: url))
+            } else { print("Audio File not found") ; return }
+            
             
             guard let aPlayer = coinFlipSound else { return }
             aPlayer.play()
             
         } catch let error {
-            print(error.localizedDescription)
+            print("Audio file failed with an error: \(error.localizedDescription)")
         }
     }
 }
+
+

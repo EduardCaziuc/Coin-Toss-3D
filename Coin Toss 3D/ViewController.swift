@@ -51,7 +51,7 @@ class ViewController: UIViewController {
             tailsImage = UIImage(named: "Tails-1")!.cgImage
             coinView.layer.contents = self.headsImage
             ChangeCoinButton.setBackgroundImage(headButtonImage, for: .normal)
-        } else if buttonCurrentBackground == UIImage(named: "Heads") {
+        } else {
             headsImage = UIImage(named: "Heads")!.cgImage
             tailsImage = UIImage(named: "Tails")!.cgImage
             coinView.layer.contents = self.headsImage
@@ -76,7 +76,7 @@ class ViewController: UIViewController {
             let duration = animationDuration * Double((maxReps+1))
             
             let startFrame = coinView.frame
-            UIView.animate(withDuration: duration, delay: 0.0, options: UIViewAnimationOptions.curveEaseOut, animations: {
+            UIView.animate(withDuration: duration, delay: 0.0, options: UIView.AnimationOptions.curveEaseOut, animations: {
                 var frame = self.coinView.frame
                 
                 frame.origin.y = 1
@@ -87,13 +87,13 @@ class ViewController: UIViewController {
             }, completion: {
                 _ in
                 
-                UIView.animate(withDuration: duration, delay: 0.0, options: UIViewAnimationOptions.beginFromCurrentState, animations: {
+                UIView.animate(withDuration: duration, delay: 0.0, options: UIView.AnimationOptions.beginFromCurrentState, animations: {
                     self.coinView.frame = startFrame
                 }, completion: nil)
             })
         }
         
-        UIView.animate(withDuration: animationDuration, delay: 0.0, options: UIViewAnimationOptions.curveLinear, animations: {
+        UIView.animate(withDuration: animationDuration, delay: 0.0, options: UIView.AnimationOptions.curveLinear, animations: {
             var rotation = CATransform3DIdentity
             
             
@@ -106,7 +106,7 @@ class ViewController: UIViewController {
             self.coinView.layer.contents = self.tailsImage
             //                self.coinView.layer.contents = (Int(arc4random()) % 2 == 0) ? self.tailsImage : self.headsImage
             
-            UIView.animate(withDuration: self.animationDuration, delay: 0.0, options: UIViewAnimationOptions.curveLinear, animations: {
+            UIView.animate(withDuration: self.animationDuration, delay: 0.0, options: UIView.AnimationOptions.curveLinear, animations: {
                 
                 var rotation = self.coinView.layer.transform;
                 
