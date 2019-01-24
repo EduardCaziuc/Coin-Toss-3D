@@ -10,13 +10,9 @@ import UIKit
 import QuartzCore
 
 
-let reps = 2
-let animation: Double = 0.15
-
 class ViewController: UIViewController {
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
-        
         return .lightContent
     }
     
@@ -25,8 +21,10 @@ class ViewController: UIViewController {
     
     private var coinSoundProvider = CoinSoundProvider()
     private var repeatCount = 0
-    private var animationDuration = animation
-    private var maxReps = reps
+    let reps = 2
+    let animation: Double = 0.15
+    private lazy var animationDuration = animation
+    private lazy var maxReps = reps
     
     private var headsImage = UIImage(named: "Heads")!.cgImage
     private var tailsImage = UIImage(named: "Tails")!.cgImage
@@ -34,9 +32,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-       
-         coinView.layer.contents = (Int(arc4random()) % 2 == 0) ? self.tailsImage : self.headsImage
+        coinView.layer.contents = (Int(arc4random()) % 2 == 0) ? self.tailsImage : self.headsImage
     }
     
     @IBOutlet weak var ChangeCoinButton: UIButton!
@@ -56,7 +52,6 @@ class ViewController: UIViewController {
             tailsImage = UIImage(named: "Tails")!.cgImage
             coinView.layer.contents = self.headsImage
             ChangeCoinButton.setBackgroundImage(head1ButtonImage, for: .normal)
-            
         }
     }
     
@@ -72,7 +67,7 @@ class ViewController: UIViewController {
         }
         repeatCount += 1
         
-        if repeatCount == 1 {                    // first time for this animation
+        if repeatCount == 1 {     // first time for this animation
             let duration = animationDuration * Double((maxReps+1))
             
             let startFrame = coinView.frame
@@ -83,7 +78,7 @@ class ViewController: UIViewController {
                 self.coinView.frame = frame
                 
                 self.coinView.rotate360Degrees()
-               
+                
             }, completion: {
                 _ in
                 
@@ -96,15 +91,12 @@ class ViewController: UIViewController {
         UIView.animate(withDuration: animationDuration, delay: 0.0, options: UIView.AnimationOptions.curveLinear, animations: {
             var rotation = CATransform3DIdentity
             
-            
-            
             rotation = CATransform3DRotate(rotation, 0.8 * CGFloat.pi, 1.0, 0.0, 0.0)
             self.coinView.layer.transform = rotation
         }, completion: {
             _ in
             
             self.coinView.layer.contents = self.tailsImage
-            //                self.coinView.layer.contents = (Int(arc4random()) % 2 == 0) ? self.tailsImage : self.headsImage
             
             UIView.animate(withDuration: self.animationDuration, delay: 0.0, options: UIView.AnimationOptions.curveLinear, animations: {
                 
@@ -115,10 +107,7 @@ class ViewController: UIViewController {
             }, completion: {
                 _ in
                 
-                //  self.coinView.layer.contents = (Int(arc4random()) % 2 == 0) ? self.tailsImage : self.headsImage
-                
                 self.coinView.layer.contents = self.headsImage
-                
                 self.doAnimation()
                 
             })
@@ -135,5 +124,4 @@ class ViewController: UIViewController {
         self.coinView.layer.contents = self.headsImage
         doAnimation()
     }
-    
 }

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,22 +18,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HYE-CE-jcv">
-                                <rect key="frame" x="71" y="463" width="178" height="67"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="67" id="bUg-bY-4UB"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="178" id="h8j-xe-1KC"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
-                                <state key="normal" title="Drag Up" backgroundImage="Flip Coin Button Background">
-                                    <color key="titleColor" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="doFlipCoin:" destination="BYZ-38-t0r" eventType="touchDragExit" id="XqT-dv-ffY"/>
-                                </connections>
-                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Heads" translatesAutoresizingMaskIntoConstraints="NO" id="EmU-yP-3hc">
-                                <rect key="frame" x="100" y="347" width="121" height="121"/>
+                                <rect key="frame" x="99.5" y="347" width="121" height="121"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="121" id="mut-13-SNg"/>
                                     <constraint firstAttribute="height" constant="121" id="rRH-ER-Imx"/>
@@ -50,15 +36,29 @@
                                     <action selector="ChanceCoinButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kTm-To-doN"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HYE-CE-jcv">
+                                <rect key="frame" x="71" y="463" width="178" height="67"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="67" id="bUg-bY-4UB"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="178" id="h8j-xe-1KC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
+                                <state key="normal" title="Drag Up" backgroundImage="Flip Coin Button Background">
+                                    <color key="titleColor" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="doFlipCoin:" destination="BYZ-38-t0r" eventType="touchDragExit" id="XqT-dv-ffY"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="EmU-yP-3hc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="7cL-Sh-3JY"/>
                             <constraint firstItem="HYE-CE-jcv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="71" id="EZG-a8-gTg"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="HYE-CE-jcv" secondAttribute="trailing" constant="71" id="Fp9-XS-6Kd"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="HYE-CE-jcv" secondAttribute="bottom" constant="38" id="Jtm-sf-XK4"/>
                             <constraint firstItem="HYE-CE-jcv" firstAttribute="top" secondItem="EmU-yP-3hc" secondAttribute="bottom" constant="-5" id="LdP-UG-sdT"/>
                             <constraint firstItem="8Bv-dU-nXK" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="P4p-Zf-NR6"/>
-                            <constraint firstItem="EmU-yP-3hc" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="iWw-9Q-loG"/>
+                            <constraint firstItem="EmU-yP-3hc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="eQy-Hi-ICr"/>
+                            <constraint firstItem="EmU-yP-3hc" firstAttribute="centerX" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="iWw-9Q-loG"/>
                             <constraint firstItem="8Bv-dU-nXK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="zQr-qR-uw6"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
